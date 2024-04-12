@@ -1,24 +1,28 @@
-//
-//  ContentView.swift
-//  Chatgpt-app
-//
-//  Created by Jonathan Kilit on 2024-04-12.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel = MovieViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            HomeScreen(viewModel: viewModel)
+                .tabItem {
+                    Text("Home")
+                }
+            WatchlistView(viewModel: viewModel)
+                .tabItem {
+                    Text("Watchlist")
+                }
         }
-        .padding()
+        .onAppear {
+            viewModel.fetchTrendingMovies()
+            // Fetch other initial data here if needed
+        }
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
