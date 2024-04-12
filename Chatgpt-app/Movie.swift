@@ -12,6 +12,7 @@ struct Movie: Identifiable, Codable, Equatable {
     let overview: String
     let backdrop_path: String?
     let poster_path: String?
+    let vote_average: Float?
     // Add more properties as needed
 }
 

@@ -6,6 +6,8 @@ class MovieViewModel: ObservableObject {
     @Published var popularMovies = [Movie]()
     @Published var searchResults = [Movie]()
     @Published var likedMovies = [Movie]()
+    @Published var castMembers = [CastMember]()
+
     
     private let API_KEY = "b6aa980ddd20798802c7cc95ed96a3ac"
     private var cancellables = Set<AnyCancellable>()
@@ -28,6 +30,24 @@ class MovieViewModel: ObservableObject {
             .replaceError(with: [])
             .receive(on: DispatchQueue.main)
             .assign(to: &$popularMovies)
+    }
+    
+    func fetchMovieCredits(for movieID: Int) {
+        let creditsURL = URL(string: "https://api.themoviedb.org/3/movie/\(movieID)/credits?api_key=\(API_KEY)&language=en-US")!
+        
+        URLSession.shared.dataTask(with: creditsURL) { data, response, error in
+            guard let data = data, error == nil else {
+                print("Error fetching movie credits: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+            
+            if let creditsResponse = try? JSONDecoder().decode(CreditsResponse.self, from: data) {
+                DispatchQueue.main.async {
+                    // Update view model with cast members
+                    self.castMembers = creditsResponse.cast
+                }
+            }
+        }.resume()
     }
     
     func searchMovies(query: String) {
@@ -61,4 +81,5 @@ class MovieViewModel: ObservableObject {
             likedMovies.append(movie)
         }
     }
+    
 }

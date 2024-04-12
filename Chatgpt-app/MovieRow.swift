@@ -52,6 +52,12 @@ struct MovieRow: View {
                             .foregroundColor(isLiked ? .red : .gray)
                     }
                 }
+                HStack {
+                    Text("Rating: \(String(format: "%.1f", movie.vote_average ?? 0.0))") // Displaying the movie rating
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                    Spacer()
+                }
                 Text(movie.overview)
                     .font(.subheadline)
                     .foregroundColor(.gray)
