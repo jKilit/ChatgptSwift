@@ -6,7 +6,7 @@ struct CreditsResponse: Codable {
     let cast: [CastMember]
 }
 
-struct Movie: Identifiable, Codable {
+struct Movie: Identifiable, Codable, Equatable {
     let id: Int
     let title: String
     let overview: String
@@ -14,6 +14,7 @@ struct Movie: Identifiable, Codable {
     let poster_path: String?
     // Add more properties as needed
 }
+
 
 struct CastMember: Identifiable, Codable {
     let id: Int

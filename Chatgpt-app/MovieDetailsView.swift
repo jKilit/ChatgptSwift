@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MovieDetailsView: View {
     let movie: Movie
+    @ObservedObject var viewModel: MovieViewModel // Add viewModel
     
     var body: some View {
         ScrollView {
@@ -26,9 +27,19 @@ struct MovieDetailsView: View {
                     .cornerRadius(10)
                 }
                 
-                VStack(alignment: .leading, spacing: 10) {
+                HStack {
                     Text(movie.title)
                         .font(.title)
+                    Spacer()
+                    Button(action: {
+                        viewModel.toggleLike(movie)
+                    }) {
+                        Image(systemName: viewModel.isMovieLiked(movie) ? "heart.fill" : "heart")
+                            .foregroundColor(viewModel.isMovieLiked(movie) ? .red : .gray)
+                    }
+                }
+                
+                VStack(alignment: .leading, spacing: 10) {
                     Text("Overview:")
                         .font(.headline)
                     Text(movie.overview)

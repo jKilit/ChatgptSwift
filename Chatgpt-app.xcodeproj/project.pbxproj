@@ -20,6 +20,8 @@
 		B9EBDC232BC9140D00CC5373 /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EBDC222BC9140D00CC5373 /* WatchlistView.swift */; };
 		B9EBDC252BC9143100CC5373 /* MovieCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EBDC242BC9143100CC5373 /* MovieCard.swift */; };
 		B9EBDC292BC91A8400CC5373 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EBDC282BC91A8400CC5373 /* MovieDetailsView.swift */; };
+		B9EBDC2B2BC935F200CC5373 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EBDC2A2BC935F200CC5373 /* SearchBar.swift */; };
+		B9EBDC2D2BC9371B00CC5373 /* MovieRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EBDC2C2BC9371B00CC5373 /* MovieRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		B9EBDC222BC9140D00CC5373 /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
 		B9EBDC242BC9143100CC5373 /* MovieCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCard.swift; sourceTree = "<group>"; };
 		B9EBDC282BC91A8400CC5373 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
+		B9EBDC2A2BC935F200CC5373 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		B9EBDC2C2BC9371B00CC5373 /* MovieRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +116,9 @@
 				B9EBDC242BC9143100CC5373 /* MovieCard.swift */,
 				B9EBDBF32BC910C100CC5373 /* ContentView.swift */,
 				B9EBDC202BC913DE00CC5373 /* HomeScreen.swift */,
+				B9EBDC2A2BC935F200CC5373 /* SearchBar.swift */,
 				B9EBDC282BC91A8400CC5373 /* MovieDetailsView.swift */,
+				B9EBDC2C2BC9371B00CC5373 /* MovieRow.swift */,
 				B9EBDC222BC9140D00CC5373 /* WatchlistView.swift */,
 				B9EBDBF52BC910C400CC5373 /* Assets.xcassets */,
 				B9EBDBF72BC910C400CC5373 /* Preview Content */,
@@ -276,10 +282,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9EBDBF42BC910C100CC5373 /* ContentView.swift in Sources */,
+				B9EBDC2D2BC9371B00CC5373 /* MovieRow.swift in Sources */,
 				B9EBDC212BC913DE00CC5373 /* HomeScreen.swift in Sources */,
 				B9EBDBF22BC910C100CC5373 /* Chatgpt_appApp.swift in Sources */,
 				B9EBDC252BC9143100CC5373 /* MovieCard.swift in Sources */,
 				B9EBDC1D2BC9136A00CC5373 /* Movie.swift in Sources */,
+				B9EBDC2B2BC935F200CC5373 /* SearchBar.swift in Sources */,
 				B9EBDC232BC9140D00CC5373 /* WatchlistView.swift in Sources */,
 				B9EBDC292BC91A8400CC5373 /* MovieDetailsView.swift in Sources */,
 				B9EBDC1F2BC9139300CC5373 /* MovieViewModel.swift in Sources */,
